@@ -1,34 +1,41 @@
 public class ItemAttributes
 {
-	private int stock;
-	private double price;
-	private String name;
-	
 	public ItemAttributes()
 	{
-		stock = 0;
 		price = 0;
 		name = "Empty";
+		calories = 0;
 	}
-	public void restock (int stock)
+	public void setCalories(int calories)
 	{
-		if (stock > 0)
-			this.stock = stock;
+		if (calories > 0)
+			this.calories = calories;
 	}
-	public void setName(String name);
+	public void setName(String name)
 	{
 		if (name.length() > 0)
 			this.name = name;
 	}
-	public void rePrice(double price)
+	public void setPrice(double price)
 	{
 		if (price > 0)
 			this.price = price;
 	}
-	public void bought()
+	public int getCal()
 	{
-		if (stock >0)
-			stock--;
-		else System.out.println("Not Available!");
+		return calories;
 	}
+	public String getName()
+	{
+		return name;
+	}
+	public double getPrice()
+	{
+		return price;
+	}
+	
+	
+	private double price;
+	private String name;
+	private int calories;
 }
