@@ -19,6 +19,27 @@ public class Maintenance
 		item.setPrice(newPrice);
 	}
 	
-	public void Restock(ItemAttributes prod, ItemAttributes[] stock, int count)
+	/**This method will restock an item
+	  *of the vending machine.
+	  * @param prod is the item to be restock
+	  * @param stock is the items that are going to be added
+	  * @param count is the amount of the item to be added
+	  */
+	public void Restock(ItemAttributes prod, ItemAttributes[10] stock, int count){
+		do{
+			if((stock.length + count) <= 10){
+				for(int i = stock.length -1; i < stock.length + count; i++)
+					stock[i] = prod;
+	
+			}
+			else{ //too much restock supply
+				System.out.println("Too much for restocking.");
+				System.out.println(" Can fit" + (10 - stock.length) + " " +
+						prod.getName() + " items.");
+				for(int i = stock.length -1; i < stock.length + (--count); i++)
+					stock[i] = prod;
+			}
+		}while(stock.length <= 10);	
+	}
 
 }
