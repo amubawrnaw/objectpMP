@@ -26,20 +26,19 @@ public class Maintenance
 	  * @param count is the amount of the item to be added
 	  */
 	public void Restock(ItemAttributes prod, ItemAttributes[10] stock, int count){
-		do{
-			if((stock.length + count) <= 10){
-				for(int i = stock.length -1; i < stock.length + count; i++)
-					stock[i] = prod;
+		if((stock.length + count) <= 10){
+			for(int i = stock.length -1; i < stock.length + count; i++)
+				stock[i] = prod;
+
+		}
+		else{ //too much restock supply
+			System.out.println("Too much for restocking.");
+			System.out.println("Can fit" + (10 - stock.length) + " " +
+					prod.getName() + " items.");
+			for(int j = stock.length -1; j < 10; i++)
+				stock[j] = prod;
+		}
 	
-			}
-			else{ //too much restock supply
-				System.out.println("Too much for restocking.");
-				System.out.println("Can fit" + (10 - stock.length) + " " +
-						prod.getName() + " items.");
-				for(int j = stock.length -1; j < 10; i++)
-					stock[j] = prod;
-			}
-		}while(stock.length <= 10);	
 	}
 
 }
