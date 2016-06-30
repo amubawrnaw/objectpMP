@@ -43,7 +43,7 @@ public class RVMDriver
 		ItemAttributes item = new ItemAttributes();
 		RegularVM rvm = new RegularVM();
 		
-		//Getting input for tray and slot or product
+		//Getting input for tray, slot and product
 		int i, slot, tray;
 		for(i = 0; i < 16){
 			do{
