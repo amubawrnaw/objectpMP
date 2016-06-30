@@ -34,10 +34,10 @@ public class Maintenance
 			}
 			else{ //too much restock supply
 				System.out.println("Too much for restocking.");
-				System.out.println(" Can fit" + (10 - stock.length) + " " +
+				System.out.println("Can fit" + (10 - stock.length) + " " +
 						prod.getName() + " items.");
-				for(int i = stock.length -1; i < stock.length + (--count); i++)
-					stock[i] = prod;
+				for(int j = stock.length -1; j < 10; i++)
+					stock[j] = prod;
 			}
 		}while(stock.length <= 10);	
 	}
