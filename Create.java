@@ -23,5 +23,5 @@ public class Create{
 	
 	private int slot; //column of the vending machine
 	private int tray; // row of the vending machine
-	private ItemAttributes[][] items[]ssss;
+	private ItemAttributes[][] items[10];
 }
